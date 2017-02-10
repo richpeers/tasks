@@ -46,6 +46,7 @@ class TaskController extends Controller
      */
     public function store(StoreTask $request)
     {
+        $this->authorize('view', $task);
         $task = $request->user()->tasks()->create($request->all());
         return redirect()->route('tasks.show', ['task' => $task]);
     }
@@ -58,6 +59,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
+        $this->authorize('view', $task);
         return view('tasks.show', compact('task'));
     }
 
@@ -69,6 +71,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
+        $this->authorize('view', $task);
         return view('tasks.edit', compact('task'));
     }
 
@@ -81,6 +84,8 @@ class TaskController extends Controller
      */
     public function update(StoreTask $request, Task $task)
     {
+        $this->authorize('view', $task);
+
         $task->title = $request->title;
         $task->description = $request->description;
         $task->due_date = $request->due_date;
@@ -98,6 +103,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        $this->authorize('view', $task);
         $task->delete();
         return redirect()->route('tasks.index');
     }
