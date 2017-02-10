@@ -82,7 +82,7 @@ class TaskController extends Controller
     public function update(StoreTask $request, Task $task)
     {
         $task->update($request->all());
-        return redirect()->route('tasks.show');
+        return redirect()->route('tasks.show', ['task' => $task]);
     }
 
     /**
