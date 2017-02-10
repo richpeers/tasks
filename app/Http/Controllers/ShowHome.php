@@ -9,7 +9,6 @@ class ShowHome extends Controller
     /**
      * Show the home page.
      *
-     * @param  int $id
      * @return Response
      */
     public function __invoke()
