@@ -12,14 +12,18 @@
                     <div class="panel-body">
                         <p><strong>Description:</strong></p>
                         <p>{{ $task->description }}</p>
-                        <p><strong>Due Date:</strong></p>
-                        <p>{{ $task->due_date }}</p>
+                        <p><strong>Due Date:</strong> {{ $task->due_date }}</p>
+                        <P><strong>Complete:</strong> {{ $task->complete ? 'Yes' : 'No' }}</P>
 
 
                     </div>
                     <div class="panel-footer text-right">
                         <a class="btn btn-default"
                            href="{{ route('tasks.edit', ['task' => $task]) }}">Edit</a>
+                        &nbsp;
+                        <a class="btn btn-default"
+                           href="{{ route('tasks.index') }}">Close</a>
+
                     </div>
                 </div>
             </div>

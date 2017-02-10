@@ -27,6 +27,7 @@ class StoreTask extends FormRequest
             'title' => 'required|max:140',
             'description' => 'max:255',
             'due_date' => 'nullable|date',
+            'complete' => 'boolean'
         ];
     }
 }

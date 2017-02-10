@@ -81,7 +81,12 @@ class TaskController extends Controller
      */
     public function update(StoreTask $request, Task $task)
     {
-        $task->update($request->all());
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->due_date = $request->due_date;
+        $task->complete = $request->has('complete') ? '1' : '0';
+        $task->save();
+
         return redirect()->route('tasks.show', ['task' => $task]);
     }
 

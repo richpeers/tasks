@@ -16,3 +16,5 @@ Route::get('/', 'ShowHome')->name('home');
 Auth::routes();
 
 Route::resource('tasks', 'TaskController');
+
+Route::get('complete/{task}', 'ToggleTaskComplete')->name('complete');

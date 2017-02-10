@@ -57,9 +57,13 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-default">
                                         Save
                                     </button>
+                                    &nbsp;
+                                    <a class="btn btn-default"
+                                       href="{{ route('tasks.index') }}">Cancel</a>
+
                                 </div>
                             </div>
                         </form>
