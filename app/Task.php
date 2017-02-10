@@ -14,20 +14,8 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'due_date',
-        'complete'
+        'due_date'
     ];
-
-    /**
-     * Set the user's first name.
-     *
-     * @param  string  $value
-     * @return void
-     */
-    public function setCompleteAttribute($value)
-    {
-        $this->attributes['complete'] = (bool)($value);
-    }
 
     /**
      * Get the user that owns the task.
