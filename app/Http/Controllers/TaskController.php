@@ -46,7 +46,6 @@ class TaskController extends Controller
      */
     public function store(StoreTask $request)
     {
-        $this->authorize('view', $task);
         $task = $request->user()->tasks()->create($request->all());
         return redirect()->route('tasks.show', ['task' => $task]);
     }
